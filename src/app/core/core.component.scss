@@ -1,0 +1,25 @@
+.sidenav {
+    height: 100vh;
+    background-color: #0766AD;
+}
+
+.container {
+    height: 100vh;
+}
+
+.menu-item {
+
+    .icon {
+        color: white
+    }
+}
+
+a {
+
+    color: white;
+    text-decoration: none;
+
+    &.active {
+        color: #29ADB2;
+    }
+}

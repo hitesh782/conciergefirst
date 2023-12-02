@@ -1,0 +1,54 @@
+<!-- <router-outlet></router-outlet> -->
+<!-- <h1>hello</h1> -->
+<!-- <button color="primary" mat-button>hello</button>
+
+<mat-sidenav-container>
+    <mat-sidenav style="width:200px;background-color: blue;">
+        hello
+    </mat-sidenav>
+    <mat-sidenav-content>
+        hi
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-icon color="primary">update</mat-icon> -->
+
+<!-- <button mat-button color="primary">submit</button>
+
+<mat-form-field [floatLabel]="'always'">
+    <mat-label>Name</mat-label>
+    <input matInput name="name">
+</mat-form-field> -->
+
+
+<!-- <p style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">hello</p> -->
+
+
+<!-- app.component.html -->
+
+<!-- <button mat-raised-button color="primary">hello</button> -->
+
+<!-- <app-go-back></app-go-back> -->
+
+
+
+
+<mat-sidenav-container class="container">
+    <mat-sidenav mode="side" opened class="sidenav" style="height:100vh;width:200px">
+        <!-- <mat-toolbar >Menu</mat-toolbar> -->
+        <mat-nav-list class="menu-item">
+            <mat-list-item>
+                <mat-icon class="icon">update</mat-icon>
+                <a class="item" routerLink="/orders" routerLinkActive="active">Orders</a>
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-nav-list class="menu-item">
+            <mat-list-item>
+                <a class="item" routerLink="orders/create-order" routerLinkActive="active">Create Order</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

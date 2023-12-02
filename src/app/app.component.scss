@@ -1,0 +1,25 @@
+.container {
+    height: 100vh;
+    /* Set container height to full viewport height */
+}
+
+.sidenav {
+    width: 200px;
+    height: 100%;
+    /* Set sidenav height to 100% of its container */
+}
+
+.content {
+    height: 100vh;
+    /* Set content height to full viewport height */
+    overflow: auto;
+    /* Add overflow for scrolling if content exceeds height */
+}
+
+.active {
+    font-weight: bold;
+    /* For example, change font-weight */
+    color: blue;
+    /* Change color */
+    /* Add other styles as needed */
+}
