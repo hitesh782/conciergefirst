@@ -64,6 +64,7 @@ export class AuthServiceService {
   }
 
   public getAccessToken(): string | null {
+    console.log('inside get access token function');
     return localStorage.getItem('access_token');
   }
 }
