@@ -1,1 +1,103 @@
 <p>orders-list works!</p>
+
+<mat-card style="margin: 5px;">
+    <div class="mat-elevation-z8">
+        <table mat-table multiTemplateDataRows [dataSource]="dataSource">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                <div class="example-element-detail"
+                    [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <div class="example-element-description">
+                        <div class="">
+                            <div class="">
+                                <pre> hello</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </ng-container> -->
+
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                    <div class="example-element-detail" [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'">
+                        <table class="detail-table">
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Phone</th>
+                                <th>Website</th>
+                                <th>Company</th>
+                            </tr>
+                            <!-- <tr>
+                    <td><img src="https://picsum.photos/id/{{element.id}}/150/100" alt="thumbnail"></td>
+                    <td>{{element.phone}}</td>
+                    <td>{{element.website}}</td>
+                    <td>{{element.company}}</td>
+                  </tr> -->
+                        </table>
+                    </div>
+                </td>
+            </ng-container>
+
+
+            <!-- <ng-container matColumnDef="expand">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Expand Row
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Additional information for {{element.name}}</p>
+                </mat-expansion-panel>
+            </td>
+        </ng-container> -->
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+                [class.example-expanded-row]="element.expanded" (click)="toggleRow(element)">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+
+            <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" matRipple class="element-row"
+            [class.expanded]="expandedElement == row"
+            (click)="expandedElement === row? expandedElement = null : expandedElement = row"></tr>
+
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']; when: isExpansionDetailRow"
+            [@detailExpand]="row.element == expandedElement ? 'expanded' : 'collapsed'" style="overflow: hidden">
+        </mat-row> -->
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</mat-card>

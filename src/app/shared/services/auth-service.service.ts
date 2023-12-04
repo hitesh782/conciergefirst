@@ -20,8 +20,9 @@ export class AuthServiceService {
 
   public login(): void {
     console.log('inside login');
-    this.auth0.authorize();
+    // this.auth0.authorize();
     // this.isAuthnticated = true;
+    console.log('login success');
   }
 
   public handleAuthentication(): void {
@@ -38,6 +39,7 @@ export class AuthServiceService {
   }
 
   private setSession(authResult: auth0.Auth0DecodedHash): void {
+    console.log('authresule expires in', authResult.expiresIn);
     const expiresAt = JSON.stringify((authResult.expiresIn || 0) * 1000 + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken || '');
     localStorage.setItem('id_token', authResult.idToken || '');

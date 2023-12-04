@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrdersModule } from './orders/orders.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrdersModule } from './orders/orders.module';
     CoreModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@ import { OrderDetailComponent } from './components/order-detail/order-detail.com
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ]
 })
 export class OrdersModule { }
